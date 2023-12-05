@@ -1,12 +1,10 @@
-use bindgen;
-
 use std::env;
 use std::path::PathBuf;
 
 fn main() {
-
     let bindings = bindgen::Builder::default()
         .header("nvEncodeAPI.h")
+        .allowlist_file("nvEncodeAPI.h")
         .generate()
         .expect("Unable to generate bindings");
 
